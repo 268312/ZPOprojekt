@@ -13,8 +13,8 @@ open class CalendarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = FragmentCalendarBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.calendarBack.setOnClickListener{
-            findNavController().navigate(R.id.action_CalendarFragment_to_SecondFragment)
+        binding.calendarBack.setOnClickListener{view ->
+            view.findNavController().navigate(R.id.action_CalendarFragment_to_SecondFragment)
         }
     }
     override fun onDestroy() {

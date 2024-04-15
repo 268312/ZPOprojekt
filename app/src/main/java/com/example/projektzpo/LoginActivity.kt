@@ -7,7 +7,7 @@ import com.example.projektzpo.databinding.LoginViewBinding
 import com.google.firebase.auth.FirebaseAuth
 
 
-open class LoginActivity : AppCompatActivity() {
+open class LoginActivity : BaseActivity() {
 
     private lateinit var binding: LoginViewBinding
 
@@ -19,8 +19,8 @@ open class LoginActivity : AppCompatActivity() {
         binding.logIn.setOnClickListener {
             logInRegisteredUser()
         }
-        binding.signUp.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_RegisterFragment)
+        binding.signUp.setOnClickListener {view ->
+            view.findNavController().navigate(R.id.action_FirstFragment_to_RegisterFragment)
         }
     }
 
