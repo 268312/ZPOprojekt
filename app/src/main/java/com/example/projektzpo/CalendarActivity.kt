@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import com.example.projektzpo.databinding.CalendarViewBinding
-import com.example.projektzpo.databinding.FragmentCalendarBinding
 
 open class CalendarActivity : AppCompatActivity() {
 

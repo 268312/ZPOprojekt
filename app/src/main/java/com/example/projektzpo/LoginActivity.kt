@@ -1,10 +1,9 @@
 package com.example.projektzpo
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import com.example.projektzpo.databinding.LoginViewBinding
-import com.google.firebase.auth.FirebaseAuth
+
 
 
 open class LoginActivity : BaseActivity() {
