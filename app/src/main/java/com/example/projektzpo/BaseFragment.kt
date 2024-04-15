@@ -1,53 +1,44 @@
 package com.example.projektzpo
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
-import com.example.projektzpo.databinding.ActivityMainBinding
+
 import com.example.projektzpo.databinding.MainViewBinding
 
-open class BaseFragment : Fragment() {
+open class BaseActivity : AppCompatActivity() {
 
-    private var _binding: MainViewBinding? = null
-    private val binding get() = _binding!!
+private lateinit var binding: MainViewBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    binding = MainViewBinding.inflate(layoutInflater)
+    setContentView(binding.root)
+}
 
-    ): View {
+fun showErrorSnackBar(message: String, errorMessage: Boolean) {
+    // Tworzenie Snackbar z przekazaną wiadomością
+    val snackbar = Snackbar.make(binding.root, message, Snackbar.LENGTH_LONG)
+    val snackbarView = snackbar.view
 
-        _binding = MainViewBinding.inflate(inflater, container, false)
-        return binding.root
-
-    }
-    fun showErrorSnackBar(message: String, errorMessage: Boolean) {
-        // Tworzenie Snackbar z przekazaną wiadomością
-        val snackbar = Snackbar.make(binding.root, message, Snackbar.LENGTH_LONG)
-        val snackbarView = snackbar.view
-
-        // Ustawienie koloru tła Snackbar w zależności od rodzaju komunikatu
-        if (errorMessage) {
-            snackbarView.setBackgroundColor(
-                ContextCompat.getColor(
-                    requireContext(),
-                    R.color.colorSnackBarError
-                )
+    // Ustawienie koloru tła Snackbar w zależności od rodzaju komunikatu
+    if (errorMessage) {
+        snackbarView.setBackgroundColor(
+            ContextCompat.getColor(
+                this,
+                R.color.colorSnackBarError
             )
-        } else {
-            snackbarView.setBackgroundColor(
-                ContextCompat.getColor(
-                    requireContext(),
-                    R.color.colorSnackBarSuccess
-                )
+        )
+    } else {
+        snackbarView.setBackgroundColor(
+            ContextCompat.getColor(
+                this,
+                R.color.colorSnackBarSuccess
             )
-        }
-        // Wyświetlenie Snackbar
-        snackbar.show()
+        )
     }
+    // Wyświetlenie Snackbar
+    snackbar.show()
+}
 }
