@@ -18,13 +18,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.analysis.setOnClickListener {view ->
-            view.findNavController().navigate(R.id.action_SecondFragment_to_AnalysisFragment)
+            view.findNavController().navigate(R.id.action_MainView_to_AnalysisView)
     }
         binding.kalendarz.setOnClickListener {view ->
-            view.findNavController().navigate(R.id.action_SecondFragment_to_CalendarFragment)
+            view.findNavController().navigate(R.id.action_MainView_to_CalendarView)
         }
         binding.avatarButton.setOnClickListener{view ->
-            view.findNavController().navigate(R.id.action_SecondFragment_to_AvatarFragment)
+            view.findNavController().navigate(R.id.action_MainView_to_AvatarView)
         }
 
     }
