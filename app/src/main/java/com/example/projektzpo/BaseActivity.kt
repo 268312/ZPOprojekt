@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat
 import com.example.projektzpo.databinding.MainViewBinding
 
 open class BaseActivity : AppCompatActivity() {
-
+// klasa Activity, po której mogą dziedziczyć inne Activities w których korzystamy ze Snackbar
 private lateinit var binding: MainViewBinding
 
 override fun onCreate(savedInstanceState: Bundle?) {
