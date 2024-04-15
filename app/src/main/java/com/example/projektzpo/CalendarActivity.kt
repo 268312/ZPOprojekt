@@ -17,8 +17,4 @@ open class CalendarActivity : AppCompatActivity() {
             view.findNavController().navigate(R.id.action_CalendarFragment_to_SecondFragment)
         }
     }
-    override fun onDestroy() {
-        super.onDestroy()
-        binding = null
-    }
 }
