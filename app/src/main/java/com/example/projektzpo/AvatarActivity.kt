@@ -7,6 +7,6 @@ class AvatarActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_avatar)
+        setContentView(R.layout.avatar_view)
     }
 }

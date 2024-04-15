@@ -5,7 +5,7 @@
     android:id="@+id/nestedScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainFragment">
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/analysis"
@@ -64,7 +64,7 @@
         android:layout_height="56dp"
         android:layout_marginEnd="40dp"
         android:clickable="true"
-        android:contentDescription="@string/lorem_ipsum"
+        android:contentDescription="avatar button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

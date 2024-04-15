@@ -38,13 +38,13 @@
         android:id="@+id/RegisterFragment"
         android:name="com.example.projektzpo.RegisterFragment"
         android:label="Register Fragment"
-        tools:layout="@layout/fragment_register">
+        tools:layout="@layout/register_view">
     </fragment>
     <fragment
         android:id="@+id/AnalysisFragment"
         android:name="com.example.projektzpo.AnalysisFragment"
         android:label="Analysis Fragment"
-        tools:layout="@layout/fragment_analysis">
+        tools:layout="@layout/analysis_view">
         <action
             android:id="@+id/action_AnalysisFragment_to_SecondFragment"
             app:destination="@id/SecondFragment"
@@ -54,7 +54,7 @@
         android:id="@+id/CalendarFragment"
         android:name="com.example.projektzpo.CalendarFragment"
         android:label="Calendar Fragment"
-        tools:layout="@layout/fragment_calendar">
+        tools:layout="@layout/calendar_view">
         <action
             android:id="@+id/action_CalendarFragment_to_SecondFragment"
             app:destination="@id/SecondFragment"
@@ -64,7 +64,7 @@
         android:id="@+id/AvatarFragment"
         android:name="com.example.projektzpo.AvatarFragment"
         android:label="Avatar Fragment"
-        tools:layout="@layout/fragment_avatar"
+        tools:layout="@layout/avatar_view"
         >
         <action
             android:id="@+id/action_AvatarFragment_to_SecondFragment"

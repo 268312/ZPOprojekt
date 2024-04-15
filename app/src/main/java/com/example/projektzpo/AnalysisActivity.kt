@@ -7,6 +7,6 @@ open class AnalysisActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_analysis)
+        setContentView(R.layout.analysis_view)
     }
 }
