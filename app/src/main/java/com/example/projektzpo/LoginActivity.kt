@@ -17,30 +17,32 @@ open class LoginActivity : BaseActivity() {
         setContentView(binding.root)
 
         binding.logIn.setOnClickListener {
-            logInRegisteredUser()
+                view ->
+            view.findNavController().navigate(R.id.action_LogInView_to_MainView)
+         //   logInRegisteredUser()
         }
         binding.signUp.setOnClickListener {view ->
-            view.findNavController().navigate(R.id.action_FirstFragment_to_RegisterFragment)
+            view.findNavController().navigate(R.id.action_LogInView_to_RegisterView)
         }
     }
 
 
-        private fun logInRegisteredUser() {
-            if (validateLoginDetails()) {
-                val login = binding.inputLogin?.text.toString().trim() { it <= ' ' }
-                val password = binding.inputPassword?.text.toString().trim() { it <= ' ' }
-
-                // Logowanie za pomocą FirebaseAuth
-                FirebaseAuth.getInstance().signInWithEmailAndPassword(login, password)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            showErrorSnackBar(resources.getString(R.string.login_successful), false)
-                            goToMainActivity()
-                            finish()
-                        } else {
-                            showErrorSnackBar(task.exception!!.message.toString(), true)
-                        }
-                    }
-            }
-        }
+//        private fun logInRegisteredUser() {
+//            if (validateLoginDetails()) {
+//                val login = binding.inputLogin?.text.toString().trim() { it <= ' ' }
+//                val password = binding.inputPassword?.text.toString().trim() { it <= ' ' }
+//
+//                // Logowanie za pomocą FirebaseAuth
+//                FirebaseAuth.getInstance().signInWithEmailAndPassword(login, password)
+//                    .addOnCompleteListener { task ->
+//                        if (task.isSuccessful) {
+//                            showErrorSnackBar(resources.getString(R.string.login_successful), false)
+//                            goToMainActivity()
+//                            finish()
+//                        } else {
+//                            showErrorSnackBar(task.exception!!.message.toString(), true)
+//                        }
+//                    }
+//            }
+//        }
 }
