@@ -7,14 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.projektzpo.databinding.MainViewBinding
-import com.google.android.material.snackbar.Snackbar
+
 
 /**
- * A simple [Fragment] subclass as the second destination in the navigation.
+ * Zamienić na activity
  */
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-class SecondFragment : Fragment() {
+class MainFragment : Fragment() {
 
     private var _binding: MainViewBinding? = null
 

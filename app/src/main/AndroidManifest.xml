@@ -13,7 +13,17 @@
         android:theme="@style/Theme.ProjektZPO"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:label="@string/title_activity_register"
+            android:theme="@style/Theme.ProjektZPO" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.ProjektZPO" />
+        <activity
+            android:name=".BaseActivity"
             android:exported="true"
             android:theme="@style/Theme.ProjektZPO">
             <intent-filter>

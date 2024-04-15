@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.projektzpo.FirstFragment"
+        android:name="com.example.projektzpo.LoginFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/login_view">
 
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.projektzpo.SecondFragment"
+        android:name="com.example.projektzpo.MainFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/main_view">
         <action
