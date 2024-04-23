@@ -1,5 +1,6 @@
 package com.example.projektzpo
 
+import android.content.Intent
 import android.os.Bundle
 
 import androidx.appcompat.app.AppCompatActivity
@@ -17,15 +18,23 @@ class MainActivity : AppCompatActivity() {
         binding = MainViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.analysis.setOnClickListener {view ->
-            view.findNavController().navigate(R.id.action_MainView_to_AnalysisView)
-    }
-        binding.kalendarz.setOnClickListener {view ->
-            view.findNavController().navigate(R.id.action_MainView_to_CalendarView)
-        }
-        binding.avatarButton.setOnClickListener{view ->
-            view.findNavController().navigate(R.id.action_MainView_to_AvatarView)
+        // Przejście do AnalysisActivity po kliknięciu przycisku "analysis"
+        binding.analysis.setOnClickListener {
+            val intent = Intent(this, AnalysisActivity::class.java)
+            startActivity(intent)
         }
 
+        // Przejście do CalendarActivity po kliknięciu przycisku "kalendarz"
+        binding.kalendarz.setOnClickListener {
+            val intent = Intent(this, CalendarActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Przejście do AvatarActivity po kliknięciu przycisku "avatarButton"
+        binding.avatarButton.setOnClickListener {
+            val intent = Intent(this, AvatarActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
+

@@ -13,7 +13,7 @@
 
         <action
             android:id="@+id/action_LogInView_to_MainView"
-            app:destination="@id/MainView" />
+            app:destination="@id/MainActivity" />
         <action
             android:id="@+id/action_LogInView_to_RegisterView"
             app:destination="@id/RegisterActivity"/>
@@ -35,13 +35,13 @@
             app:destination="@id/AvatarActivity"/>
     </activity>
     <activity
-        android:id="@+id/RegisterFragment"
+        android:id="@+id/RegisterActivity"
         android:name="com.example.projektzpo.RegisterActivity"
         android:label="Register Fragment"
         tools:layout="@layout/register_view">
     </activity>
     <activity
-        android:id="@+id/AnalysisFragment"
+        android:id="@+id/AnalysisActivity"
         android:name="com.example.projektzpo.AnalysisActivity"
         android:label="Analysis Fragment"
         tools:layout="@layout/analysis_view">
@@ -51,7 +51,7 @@
             />
     </activity>
     <activity
-        android:id="@+id/CalendarFragment"
+        android:id="@+id/CalendarActivity"
         android:name="com.example.projektzpo.CalendarActivity"
         android:label="Calendar Fragment"
         tools:layout="@layout/calendar_view">
@@ -61,7 +61,7 @@
             />
     </activity>
     <activity
-        android:id="@+id/AvatarFragment"
+        android:id="@+id/AvatarActivity"
         android:name="com.example.projektzpo.AvatarActivity"
         android:label="Avatar Fragment"
         tools:layout="@layout/avatar_view"

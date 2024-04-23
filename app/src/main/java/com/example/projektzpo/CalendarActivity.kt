@@ -1,5 +1,6 @@
 package com.example.projektzpo
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -13,8 +14,10 @@ open class CalendarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = CalendarViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.calendarBack.setOnClickListener{view ->
-            view.findNavController().navigate(R.id.action_CalendarView_to_MainView)
+
+        binding.calendarBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }

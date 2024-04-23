@@ -1,5 +1,6 @@
 package com.example.projektzpo
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.navigation.findNavController
 import com.example.projektzpo.databinding.LoginViewBinding
@@ -15,15 +16,19 @@ open class LoginActivity : BaseActivity() {
         binding = LoginViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Przejście do MainViewActivity po kliknięciu przycisku "logIn"
         binding.logIn.setOnClickListener {
-                view ->
-            view.findNavController().navigate(R.id.action_LogInView_to_MainView)
-         //   logInRegisteredUser()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
-        binding.signUp.setOnClickListener {view ->
-            view.findNavController().navigate(R.id.action_LogInView_to_RegisterView)
+
+        // Przejście do RegisterViewActivity po kliknięciu przycisku "signUp"
+        binding.signUp.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
+
 
 
 //        private fun logInRegisteredUser() {
