@@ -46,7 +46,11 @@
     <string name="zaloguj_si">Zaloguj się</string>
     <string name="zarejestruj_si">Zarejestruj się</string>
     <string name="has_o">Hasło</string>
-    <string name="login">Login</string>
+    <string name="email">E-mail</string>
+    <string name="imie">Imię</string>
+    <string name="plec">Płeć</string>
+    <string name="rok_urodzenia">Rok urodzenia</string>
+    <string name="wzrost">Wzrost</string>
     <string name="vitalcheck">VitalCheck</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -54,4 +58,22 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_register">RegisterActivity</string>
+    <string name="err_msg_enter_name">Please enter your name</string>
+    <string name="err_msg_enter_sex">Please enter your sex</string>
+    <string name="err_msg_invalid_sex">Please enter "K" or "M"</string>
+    <string name="err_msg_enter_height">Please enter your height</string>
+    <string name="err_msg_invalid_height">Please enter your height in cm</string>
+    <string name="err_msg_enter_birthdate">Please enter your birthdate</string>
+    <string name="err_msg_invalid_birthdate">Invalid date</string>
+    <string name="err_msg_enter_email">Please enter your email</string>
+    <string name="err_msg_invalid_email">Invalid email</string>
+    <string name="err_msg_enter_password">Please enter your password</string>
+    <string name="err_msg_enter_reppassword">Please confirm your password</string>
+    <string name="err_msg_invalid_password">Your password should contain at least 8 characters, 1 lowercase letter, 1 uppercase letter, 1 digit, 1 special character</string>
+    <string name="err_msg_password_mismatch">Passwords mismatch</string>
+    <string name="login_successful">You are logged in successfully</string>
+    <string-array name="sex_array">
+        <item>Kobieta</item>
+        <item>Mężczyzna</item>
+    </string-array>
 </resources>
