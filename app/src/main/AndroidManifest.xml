@@ -47,12 +47,17 @@
         <activity
             android:name=".AvatarActivity"
             android:exported="false"
-            android:label="@string/title_activity_register"
+            android:label="Avatar Activity"
             android:theme="@style/Theme.ProjektZPO" />
         <activity
             android:name=".CalendarActivity"
             android:exported="false"
             android:label="Calendar Activity"
+            android:theme="@style/Theme.ProjektZPO" />
+        <activity
+            android:name=".MeasurementActivity"
+            android:exported="false"
+            android:label="Measurement Activity"
             android:theme="@style/Theme.ProjektZPO" />
     </application>
 

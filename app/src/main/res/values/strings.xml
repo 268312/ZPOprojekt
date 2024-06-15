@@ -44,6 +44,9 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="zaloguj_si">Zaloguj się</string>
+    <string name="edytuj_dane">Edytuj dane</string>
+    <string name="ustaw_pow">Ustaw powiadomienie</string>
+    <string name="wyloguj_si">Wyloguj się</string>
     <string name="zarejestruj_si">Zarejestruj się</string>
     <string name="has_o">Hasło</string>
     <string name="email">E-mail</string>

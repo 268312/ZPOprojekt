@@ -3,16 +3,14 @@ package com.example.projektzpo
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import com.example.projektzpo.databinding.LoginViewBinding
 import com.google.firebase.auth.FirebaseAuth
-import org.mindrot.jbcrypt.BCrypt
 
 
 open class LoginActivity : BaseActivity() {
 
-    private lateinit var binding: LoginViewBinding
 
     private var inputEmail: EditText? = null
 
@@ -20,21 +18,23 @@ open class LoginActivity : BaseActivity() {
 
     private var loginButton: Button? = null
 
+    private var registerButton: Button? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = LoginViewBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.login_view)
 
         inputEmail = findViewById(R.id.inputEmail)
         inputPassword = findViewById(R.id.inputPassword)
         loginButton = findViewById(R.id.log_in)
+        registerButton = findViewById(R.id.sign_up)
 
         loginButton?.setOnClickListener{
             logInRegisteredUser()
         }
 
         // Przejście do RegisterViewActivity po kliknięciu przycisku "signUp"
-        binding.signUp.setOnClickListener {
+        registerButton?.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }

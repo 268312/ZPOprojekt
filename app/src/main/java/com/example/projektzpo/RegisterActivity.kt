@@ -3,6 +3,8 @@ package com.example.projektzpo
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
+import android.util.Log.*
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -17,7 +19,9 @@ import com.google.firebase.firestore.firestore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import java.util.Calendar
+import kotlin.math.log
 
 class RegisterActivity : BaseActivity(), AdapterView.OnItemSelectedListener {
 
@@ -31,6 +35,7 @@ class RegisterActivity : BaseActivity(), AdapterView.OnItemSelectedListener {
     private var inputRepPassword: EditText? = null
 
     val db = Firebase.firestore
+
     private var selectedYear: Int = Calendar.getInstance().get(Calendar.YEAR)
 
     private val dbOperations = FireStoreHandler(db)
@@ -128,7 +133,6 @@ class RegisterActivity : BaseActivity(), AdapterView.OnItemSelectedListener {
         if (validateRegisterDetails()) {
             val email: String = inputEmail?.text.toString().trim { it <= ' ' }
             val password: String = inputPassword?.text.toString().trim { it <= ' ' }
-
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
@@ -143,7 +147,6 @@ class RegisterActivity : BaseActivity(), AdapterView.OnItemSelectedListener {
                         val birthYear: Int = selectedYear
                         val data = FireStoreData(name, sex, height, birthYear)
                         GlobalScope.launch(Dispatchers.Main) {
-                            // Dodanie danych do bazy danych Firestore
                             dbOperations.addData(email, data)
                         }
                         FirebaseAuth.getInstance().signOut()
