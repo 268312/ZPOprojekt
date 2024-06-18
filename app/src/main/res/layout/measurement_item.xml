@@ -2,13 +2,54 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/inputMeasurement"
-        android:layout_width="209dp"
-        android:layout_height="match_parent"
-        android:hint="measurement"
-        android:textColor="@color/black" />
+    <EditText
+        android:id="@+id/inputWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/waga"
+        android:inputType="numberDecimal"
+        android:importantForAutofill="no" />
 
+    <EditText
+        android:id="@+id/inputBloodPressure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/ci_nienie_krwi"
+        android:inputType="text"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/inputPulse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/t_tno"
+        android:inputType="number"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/inputSaturation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/saturacja_po2"
+        android:inputType="number"
+        android:importantForAutofill="no"/>
+
+    <EditText
+        android:id="@+id/inputGlucose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/poziom_glukozy"
+        android:inputType="numberDecimal"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/inputCholesterole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/poziom_cholesterolu"
+        android:inputType="numberDecimal"
+        android:importantForAutofill="no" />
 </LinearLayout>

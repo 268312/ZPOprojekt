@@ -75,6 +75,13 @@
     <string name="err_msg_invalid_password">Your password should contain at least 8 characters, 1 lowercase letter, 1 uppercase letter, 1 digit, 1 special character</string>
     <string name="err_msg_password_mismatch">Passwords mismatch</string>
     <string name="login_successful">You are logged in successfully</string>
+    <string name="zapisz_pomiar">Zapisz pomiar</string>
+    <string name="waga">Waga</string>
+    <string name="ci_nienie_krwi">Ciśnienie krwi</string>
+    <string name="t_tno">Tętno</string>
+    <string name="saturacja_po2">Saturacja pO2</string>
+    <string name="poziom_glukozy">Poziom glukozy</string>
+    <string name="poziom_cholesterolu">Poziom cholesterolu</string>
     <string-array name="sex_array">
         <item>Kobieta</item>
         <item>Mężczyzna</item>

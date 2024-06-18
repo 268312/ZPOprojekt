@@ -2,15 +2,24 @@ package com.example.projektzpo
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.firestore
+import com.google.firebase.Timestamp
 
-class MeasurementActivity: BaseActivity() {
+class MeasurementActivity : BaseActivity() {
 
-    private var backButton: ImageButton? = null
-
-    private var recyclerView: RecyclerView? = null
+    private lateinit var saveButton: Button
+    private lateinit var backButton: ImageButton
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var itemAdapter: MeasurementAdapter
+    private lateinit var userEmail: String
+    private lateinit var measurements: MutableList<Measurement>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,26 +27,48 @@ class MeasurementActivity: BaseActivity() {
 
         backButton = findViewById(R.id.measurementBack)
         recyclerView = findViewById(R.id.recyclerView)
+        saveButton = findViewById(R.id.save)
 
-        backButton?.setOnClickListener {
+        // Uzyskanie emaila zalogowanego użytkownika
+        val user = FirebaseAuth.getInstance().currentUser
+        user?.let {
+            userEmail = it.email ?: ""
+        }
+
+        backButton.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        val measurements = mutableListOf(
-            Measurement("Data pomiaru"),
-            Measurement("Waga"),
-            Measurement("Ciśnienie krwi"),
-            Measurement("Tętno"),
-            Measurement("Saturacja pO2"),
-            Measurement("Poziom glukozy"),
-            Measurement("Poziom cholesterolu")
+        measurements = mutableListOf(
+        //           Measurement(userEmail, Timestamp.now(), null, "", null, null, null, null)
         )
 
-        val adapter = MeasurementAdapter(measurements)
-        recyclerView?.adapter = adapter
+        itemAdapter = MeasurementAdapter(measurements)
+        recyclerView.adapter = itemAdapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
 
-        recyclerView?.layoutManager = LinearLayoutManager(this)
+        saveButton.setOnClickListener {
+            saveDataToFirestore()
+        }
+    }
+
+    private fun saveDataToFirestore() {
+        val db = Firebase.firestore
+        val measurements = itemAdapter.measurements
+
+        measurements.forEach { measurement ->
+            // Ustawienie aktualnego czasu
+            measurement.time = Timestamp.now()
+
+            db.collection("measurements").add(measurement)
+                .addOnSuccessListener { documentReference ->
+                    Log.d("Firestore", "DocumentSnapshot added with ID: ${documentReference.id}")
+                }
+                .addOnFailureListener { e ->
+                    Log.w("Firestore", "Error adding document", e)
+                }
+        }
     }
 }
