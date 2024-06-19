@@ -21,7 +21,7 @@ class MainActivity : BaseActivity() {
 
     private var measurementButton: Button? = null
 
-    private var analysisButton: Button? = null
+    private var listButton: Button? = null
 
     private var avatarButton: FloatingActionButton? = null
 
@@ -35,7 +35,7 @@ class MainActivity : BaseActivity() {
         welcomeTextView = findViewById(R.id.welcomeText)
         calendarButton = findViewById(R.id.kalendarz)
         measurementButton = findViewById(R.id.addMeasurement)
-        analysisButton = findViewById(R.id.analysis)
+        listButton = findViewById(R.id.list)
         avatarButton = findViewById(R.id.avatarButton)
         val user = FirebaseAuth.getInstance().currentUser
         val email = user?.email.toString()
@@ -54,8 +54,8 @@ class MainActivity : BaseActivity() {
             startActivity(intent)
         }
 
-        analysisButton?.setOnClickListener {
-            val intent = Intent(this, AnalysisActivity::class.java)
+        listButton?.setOnClickListener {
+            val intent = Intent(this, ListActivity::class.java)
             startActivity(intent)
         }
 

@@ -24,11 +24,12 @@
         android:label="MainActivity"
         tools:layout="@layout/main_view">
         <action
-            android:id="@+id/action_MainView_to_AnalysisView"
-            app:destination="@id/AnalysisActivity"/>
-        <action
             android:id="@+id/action_MainView_to_CalendarView"
             app:destination="@id/CalendarActivity"
+            />
+        <action
+            android:id="@+id/action_MainView_to_ListView"
+            app:destination="@id/ListActivity"
             />
         <action
             android:id="@+id/action_MainView_to_AvatarView"
@@ -41,22 +42,22 @@
         tools:layout="@layout/register_view">
     </activity>
     <activity
-        android:id="@+id/AnalysisActivity"
-        android:name="com.example.projektzpo.AnalysisActivity"
-        android:label="Analysis Fragment"
-        tools:layout="@layout/analysis_view">
-        <action
-            android:id="@+id/action_AnalysisView_to_MainView"
-            app:destination="@id/MainActivity"
-            />
-    </activity>
-    <activity
         android:id="@+id/CalendarActivity"
         android:name="com.example.projektzpo.CalendarActivity"
         android:label="Calendar Fragment"
         tools:layout="@layout/calendar_view">
         <action
             android:id="@+id/action_CalendarView_to_MainView"
+            app:destination="@id/MainActivity"
+            />
+    </activity>
+    <activity
+        android:id="@+id/ListActivity"
+        android:name="com.example.projektzpo.ListActivity"
+        android:label="List Fragment"
+        tools:layout="@layout/list_view">
+        <action
+            android:id="@+id/action_ListView_to_MainView"
             app:destination="@id/MainActivity"
             />
     </activity>

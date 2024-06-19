@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Data:" />
+
+    <TextView
+        android:id="@+id/weightTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/waga" />
+
+    <TextView
+        android:id="@+id/bloodPressureTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/ci_nienie_krwi" />
+
+    <TextView
+        android:id="@+id/pulseTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tętno"
+        android:padding="16dp"/>
+
+    <TextView
+        android:id="@+id/saturationTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/saturacja_po2"
+        android:padding="16dp" />
+
+    <TextView
+        android:id="@+id/glucoseTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/poziom_glukozy"
+        android:padding="16dp"/>
+
+        <TextView
+            android:id="@+id/cholesteroleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/poziom_cholesterolu"
+            android:padding="16dp"/>
+
+
+    </LinearLayout>
