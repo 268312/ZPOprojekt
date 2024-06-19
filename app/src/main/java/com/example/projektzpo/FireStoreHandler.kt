@@ -15,6 +15,15 @@ class FireStoreHandler(private val db: FirebaseFirestore) : FireStoreInterface {
         }
     }
 
+    override suspend fun addMeasurement(email: String, date: String, data: Measurement): Result<Unit> {
+        return try {
+            db.collection("measurements").document(email).collection("measurement").document(date).set(data).await()
+            Result.success(Unit)
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+    }
+
     override suspend fun getData(email: String): FireStoreData? {
         val snapshot = FirebaseFirestore.getInstance().collection("users")
             .whereEqualTo(FieldPath.documentId(), email)

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
 
-class MeasurementAdapter(public val measurements: List<Measurement>) : RecyclerView.Adapter<MeasurementAdapter.MeasurementViewHolder>() {
+class MeasurementAdapter(val measurements: List<Measurement>) : RecyclerView.Adapter<MeasurementAdapter.MeasurementViewHolder>() {
 
     class MeasurementViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val weightInput: EditText = itemView.findViewById(R.id.inputWeight)
@@ -27,12 +27,19 @@ class MeasurementAdapter(public val measurements: List<Measurement>) : RecyclerV
     override fun onBindViewHolder(holder: MeasurementViewHolder, position: Int) {
         val currentMeasurement = measurements[position]
 
-        holder.weightInput.setText(currentMeasurement.weight.toString())
-        holder.bloodPressureInput.setText(currentMeasurement.bloodPressure)
-        holder.pulseInput.setText(currentMeasurement.pulse.toString())
-        holder.saturationInput.setText(currentMeasurement.saturation.toString())
-        holder.glucoseInput.setText(currentMeasurement.glucose.toString())
-        holder.cholesteroleInput.setText(currentMeasurement.cholesterole.toString())
+//        holder.weightInput.setText(currentMeasurement.weight.toString())
+//        holder.bloodPressureInput.setText(currentMeasurement.bloodPressure)
+//        holder.pulseInput.setText(currentMeasurement.pulse.toString())
+//        holder.saturationInput.setText(currentMeasurement.saturation.toString())
+//        holder.glucoseInput.setText(currentMeasurement.glucose.toString())
+//        holder.cholesteroleInput.setText(currentMeasurement.cholesterole.toString())
+
+        holder.weightInput.setText("")
+        holder.bloodPressureInput.setText("")
+        holder.pulseInput.setText("")
+        holder.saturationInput.setText("")
+        holder.glucoseInput.setText("")
+        holder.cholesteroleInput.setText("")
 
         holder.weightInput.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
