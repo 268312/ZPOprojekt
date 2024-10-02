@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.NumberPicker
 import android.widget.Spinner
 import com.google.firebase.Firebase
@@ -22,6 +23,7 @@ import java.util.Calendar
 class RegisterActivity : BaseActivity(), AdapterView.OnItemSelectedListener {
 
     private var registerButton: Button? = null
+    private var backButton: ImageButton? = null
     private var inputName: EditText? = null
     private var dropdownSex: Spinner? = null
     private var inputHeight: EditText? = null
@@ -39,6 +41,11 @@ class RegisterActivity : BaseActivity(), AdapterView.OnItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register_view)
+        backButton = findViewById(R.id.registerBack)
+        backButton?.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
         registerButton = findViewById(R.id.create_account)
         inputName = findViewById(R.id.inputName)
         dropdownSex = findViewById(R.id.sexDropdown)

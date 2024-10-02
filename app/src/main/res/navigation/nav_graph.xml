@@ -40,6 +40,9 @@
         android:name="com.example.projektzpo.RegisterActivity"
         android:label="Register Fragment"
         tools:layout="@layout/register_view">
+        <action
+            android:id="@+id/action_RegisterView_to_LoginView"
+            app:destination="@id/LoginActivity" />
     </activity>
     <activity
         android:id="@+id/CalendarActivity"

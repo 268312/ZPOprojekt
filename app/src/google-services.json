@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "524928846646",
+    "project_id": "zpo-projekt-ac862",
+    "storage_bucket": "zpo-projekt-ac862.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524928846646:android:5ee44ea4699768b1304197",
+        "android_client_info": {
+          "package_name": "com.example.projektzpo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEHvL68rNSOt5qL-K44ftwM2JC88Tacpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
