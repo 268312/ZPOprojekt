@@ -56,7 +56,6 @@ class ListActivity : BaseActivity() {
                     measurement.cholesterole)
                 measurements.add(element)
             }
-
             itemAdapter.notifyDataSetChanged()
         }
 

@@ -82,6 +82,8 @@
     <string name="saturacja_po2">Saturacja pO2</string>
     <string name="poziom_glukozy">Poziom glukozy</string>
     <string name="poziom_cholesterolu">Poziom cholesterolu</string>
+    <string name="textview">TextView</string>
+    <string name="selectedDateTextView" />
     <string-array name="sex_array">
         <item>Kobieta</item>
         <item>Mężczyzna</item>
